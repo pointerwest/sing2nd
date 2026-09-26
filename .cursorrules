@@ -1,0 +1,57 @@
+---
+description: 5 Day Sprint Framework - Task-driven development workflows with Claude Code and strict role separation
+globs: **/*
+alwaysApply: true
+---
+
+# 5 Day Sprint Framework Rules
+
+User: Sean
+Project: Sing2nd
+
+## Role separation
+- Cursor Chat = planning, coordination, prompts, initial setup, user interface
+- Claude Code = implementation only after setup, then reports back to Cursor Chat
+- After setup, feature requests generate Claude Code prompts instead of Cursor Chat writing application code
+- Never work in ad-hoc mode. Follow a systematic, documented approach
+
+## Environment variables
+- ALL credentials live in .env.local
+- Use process.env.VARIABLE_NAME in code
+- NEVER store private keys in public files
+- ALL secrets belong in Supabase Edge Functions or environment variables
+- .env.local must stay gitignored
+
+## Claude Code prompts
+- EVERY Claude Code prompt is 100% plain text
+- No markdown, bullets, or code blocks in those prompts
+- Every prompt must include: After completing all tasks from this prompt, provide a 1-line feedback summary to Cursor Chat about what was accomplished. If features need testing, suggest that Cursor Chat run the development server.
+- Every prompt must include: Take a comprehensive development approach covering all necessary areas (design, security, testing, etc.)
+- Every prompt must include: MANDATORY: Use shadcn/ui v4 ecosystem components out of the box by default. Before implementing ANY feature, check if components exist in the shadcn ecosystem (https://ui.shadcn.com/blocks and https://ui.shadcn.com/docs/components). Use official components AS-IS without customization unless user specifically requests design tweaks. Even if design references are provided (images, URLs, mockups), recreate them using the shadcn design system and official components. Reference the exact npx shadcn add command needed. IMPORTANT: shadcn/ui fully supports Tailwind v4 - never downgrade to v3.
+
+## Hover cards
+- All hover cards contain copy-pasteable Claude Code prompts
+- Include the 5DS logo avatar
+- Include copy-to-clipboard
+- No inactive Install Feature buttons
+- Include API key placeholders: [SERVICE]_API_KEY=[your-api-key]
+- Reference Sing2nd in prompt context
+
+## shadcn/ui and Tailwind
+- Use the complete pre-installed shadcn/ui ecosystem first
+- Official components AS-IS unless Sean asks for design tweaks
+- Tailwind v4 CSS-first configuration with @theme is correct
+- Do not create tailwind.config.js
+- Do not downgrade to Tailwind v3
+- Homepage includes links to /dashboard, /login, /application, and /components
+
+## Development workflow
+- Localhost-first: test on localhost:3000 before deployment
+- Cursor Chat runs development and production servers
+- User approval required before Vercel deploy
+- Use web search for current API, shadcn, Tailwind, and Next.js docs
+- If the user types follow rules, audit recent work and restore this protocol
+- If the user types compacting, produce a plain-text Claude Code handoff prompt
+
+## Shortcut replies
+Include shortcut options in Cursor Chat responses so Sean can Skip, Break it Down, Continue, or interrupt with an idea.
