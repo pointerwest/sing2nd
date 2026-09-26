@@ -15,6 +15,7 @@ import { TributeNav } from "@/components/common/tribute-nav"
 import { AmericasGameTitle } from "@/components/features/americas-game-title"
 import { CrestSplash } from "@/components/features/crest-splash"
 import { GameCountdown } from "@/components/features/game-countdown"
+import { CbsIntrosSection } from "@/components/features/cbs-intros-section"
 import { SpiritSpotsSection } from "@/components/features/spirit-spots-section"
 import {
   Accordion,
@@ -36,6 +37,12 @@ import {
 } from "@/components/ui/card"
 
 const commercials = [
+  {
+    title: "CBS Army-Navy intros",
+    year: "Broadcast",
+    href: "/#cbs-intros",
+    note: "The official CBS Sports teases that open America's Game.",
+  },
   {
     title: "USAA presents America's Game",
     year: "Series",
@@ -355,7 +362,7 @@ export function TributeHome() {
               <IconVideo className="size-5" />
               <CardTitle>Commercials and films</CardTitle>
               <CardDescription>
-                USAA&apos;s Army-Navy films are part of the ritual. Watch the archive, then come back for 2026.
+                CBS intros and USAA&apos;s Army-Navy films are part of the ritual. Watch the archive, then come back for 2026.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
@@ -378,6 +385,8 @@ export function TributeHome() {
           </Card>
           </div>
         </section>
+
+        <CbsIntrosSection />
 
         <SpiritSpotsSection />
 

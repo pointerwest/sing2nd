@@ -5,14 +5,14 @@ export const metadata = {
     absolute: "Sing2nd | America's Game",
   },
   description:
-    "The 127th Army-Navy Game is Saturday, December 12, 2026 at 3:00 p.m. ET at MetLife Stadium in East Rutherford. Stories, spirit videos, tickets, hotels, and a kickoff countdown.",
+    "The 127th Army-Navy Game is Saturday, December 12, 2026 at 3:00 p.m. ET at MetLife Stadium in East Rutherford. CBS intros, stories, spirit videos, tickets, hotels, and a kickoff countdown.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "America's Game | 127th Army-Navy Football Classic",
     description:
-      "December 12, 2026 at MetLife Stadium. Stories, spirit videos, tickets, and the countdown to kickoff.",
+      "December 12, 2026 at MetLife Stadium. CBS intros, stories, spirit videos, tickets, and the countdown to kickoff.",
     url: "/",
   },
 }
